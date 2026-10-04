@@ -2,9 +2,9 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
-Lane  :  AI / Cyber / IT      (delete two)
-Date  :
+Name  : Ryan Crispen
+Lane  : Cyber      
+Date  : 3/10/2026
 
 Run it:   python template.py
 
@@ -13,30 +13,25 @@ Delete these instructions as you replace them with your code.
 """
 
 # ==================================================================== INPUT
-# 1. Ask for your three values.
-#
-#    - the first is TEXT      (a name, a hostname, an IP)  -> no conversion needed
-#    - the second is a NUMBER (use float(), not int())
-#    - the third  is a NUMBER (use float(), not int())
-
-label = ""      # replace with an input() call
-value = 0.0     # replace with an input() call, converted with float()
-limit = 0.0     # replace with an input() call, converted with float()
-
+source_IP = input("Source IP:")     
+failed_logins = float(input("Failed Logins:"))     
+total_attempts = float(input("Total Attempts:"))     
 
 # ================================================================== PROCESS
-# 2. Work out the difference and the percentage.       [Typical and above]
-
-difference = 0.0   # replace with your calculation
-percent = 0.0       # replace with your calculation
+difference = total_attempts - failed_logins   
+percent = (failed_logins/total_attempts) * 100       
 # 3. Decide a status and store it in a variable called status.
 #
 #    Threshold : if / else        -> "OVER LIMIT" or "OK"
 #    Typical   : if / elif / else -> "OVER LIMIT" (100% or more),
 #                                     "WARNING" (90% or more), otherwise "OK"
-
-status = ""   # replace with your if / else (or if / elif / else)
-
+status = ""
+if percent >= 100:
+    status = ("OVER LIMIT") 
+elif percent >=90:
+    status = ("WARNING")
+else:
+    status = ("OK")
 
 # =================================================================== OUTPUT
 # 4. Print the report.
@@ -50,11 +45,17 @@ status = ""   # replace with your if / else (or if / elif / else)
 
 print()
 print("=" * 34)
-print(f"  RECORD CHECK  -  {label}")
+print(f"  RECORD CHECK  -  {source_IP}")
 print("=" * 34)
 
 # your report lines go here
 
+ 
+print(f"Failed Logins     : {failed_logins:>10.2f}")
+print(f"Total Attempts    : {total_attempts:>10.2f}")
+print(f"Difference        : {difference:>+10.2f}")
+print(f"Percent           : {percent:>10.2f}%")
+print(f"Status            : {status:>10}")
 print("=" * 34)
 
 
