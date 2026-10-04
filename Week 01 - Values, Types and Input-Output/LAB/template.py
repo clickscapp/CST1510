@@ -27,11 +27,11 @@ print("=" * 34)
 print(f"  RECORD CHECK  -  {source_ip}")
 print("=" * 34)
 
-print(f"Used      : {failed_logins:>10.2f}")
-print(f"Total     : {total_attempts:>10.2f}")
-print(f"Free      : {difference:>+10.2f}")
-print(f"LoginFlags: {security_flags:>10} ")
-print(f"Percent   : {percent:>10.2f}%")
+print(f"Source IP         : {failed_logins:>10.2f}")
+print(f"Failed Logins     : {total_attempts:>10.2f}")
+print(f"Free              : {difference:>+10.2f}")
+print(f"LoginFlags        : {security_flags:>10} ")
+print(f"Percent           : {percent:>10.2f}%")
 # The idea behind the login flags was to see every 5 login failures as a security risk and it gets flagged. 
 # Its useful for an understanding of if someone is trying to access an account they arent allowed to or hack it.
 # A high amount of flags requires further actions and it can help prevent any future attacks stop current ones.
