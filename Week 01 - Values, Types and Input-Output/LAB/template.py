@@ -23,6 +23,7 @@ percent = (failed_logins/total_attempts) * 100
 
 # =================================================================== OUTPUT
 print()
+"""Prints the info with variables with borders and specific f string formatting"""
 print("=" * 34)
 print(f"  RECORD CHECK  -  {source_ip}")
 print("=" * 34)

@@ -17,6 +17,7 @@ over_attempts = 0
 while True: 
 
     source_IP = input("Source IP:")    
+    """This function gets the users source IP and if they type quit it breaks"""
     if source_IP == "quit":
             break 
     failed_logins = float(input("Failed Logins:"))     
@@ -28,6 +29,7 @@ while True:
     percent = (failed_logins/total_attempts) * 100       
 
     status = ""
+    """This function assigns a message to percent when it falls in specific ranges"""
     if percent >= 100:
         status = ("OVER LIMIT") 
         over_attempts +=1
@@ -38,6 +40,7 @@ while True:
 
 # =================================================================== OUTPUT
     print()
+    """Prints the info in the above variables with borders and f string formatting"""
     print("=" * 34)
     print(f"  RECORD CHECK  -  {source_IP}")
     print("=" * 34)
