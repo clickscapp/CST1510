@@ -12,9 +12,6 @@ Work through the numbered sections in order. Each one tells you what it must do.
 Delete these instructions as you replace them with your code.
 """
 
-from itertools import groupby
-from operator import index
-
 import pandas as pd
 import matplotlib.pyplot as plt
 # ==================================================================== LOAD
