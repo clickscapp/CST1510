@@ -22,7 +22,7 @@ with open("cyber_records.txt", "w") as f:
 
 
 def parse_line(raw_line):
-    """ """
+    """Parses the raw server string into dictionary using hostname used and total values."""
     cleaned_line = raw_line.strip().lower()
 
     fields = {}
@@ -39,7 +39,7 @@ def parse_line(raw_line):
     return fields
 
 def status_of(record):
-    """ """
+    """Assigns a status based on the number of attempts in the record."""
     return "OVER LIMIT" if record["attempts"] >= 100 else "WARNING" if record["attempts"] >= 90 else "OK"
 # ====================================================================== INPUT
 raw_records = [] 
