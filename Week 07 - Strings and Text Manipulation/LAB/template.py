@@ -13,15 +13,6 @@ Delete these instructions as you replace them with your code.
 """
 
 # =================================================================== FUNCTIONS
-# 1. Write parse_line(raw_line) that cleans and parses one raw, messy line
-#    into a dict. Handle inconsistent spacing and case - that is the whole
-#    point of this week.
-#
-#    Typical and above: also write status_of(...), shaped for your lane
-#    (e.g. OVER LIMIT / WARNING / OK, or FLAGGED / OK). Give both a
-#    one-line docstring.
-
-# your function(s) go here
 with open("cyber_records.txt", "w") as f:
     f.write("src=10.4.32.3,attempts=70,result=failed\n")
     f.write("src=23.1.3,attempts=2,result=success\n")
@@ -65,7 +56,7 @@ for raw_record in raw_records:
     status = status_of(clean_dict) 
 
     print(f"{clean_dict} Status: {status}")
-    
+
     total_records +=1
     if status == "FLAGGED":
        flagged_records +=1
@@ -74,9 +65,4 @@ print(f"Summary: {total_records} records, {flagged_records} flagged.")
 
 
 # ==========================================================================
-# 4. Before you finish:
-#
-#    [ ] Run it against at least 5 genuinely messy raw records
-#    [ ] Run it with a value that will not convert to a number - write the
-#        error down
-#    [ ] Check every function does one job, with a docstring
+
